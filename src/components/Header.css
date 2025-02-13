@@ -1,0 +1,70 @@
+/* 📌 Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 2rem;
+    background-color: white;
+  }
+  
+  /* 📌 Logo */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* 📌 Default Nav for Larger Screens */
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* 📌 Hamburger Menu Button */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  /* 📌 Responsive Navigation for Small Screens */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav.open {
+      display: block;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .nav li {
+      margin-bottom: 10px;
+    }
+  }
+  

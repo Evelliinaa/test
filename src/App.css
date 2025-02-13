@@ -1,0 +1,89 @@
+/* App.css */
+
+/* Reset or normalize styles as you see fit */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* A container that holds the entire page (for a flexible layout) */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer is at bottom if content is short */
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ccc;  /* matches the screenshot’s border around header */
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+  flex: 1;            /* fill remaining vertical space */
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #f9f9f9;
+}
+
+/* Left column (text) */
+.content {
+  flex: 2;
+}
+
+/* Right column (image) */
+.image-container {
+  flex: 1;
+  background-color: #eee;  /* placeholder background */
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make the image responsive if desired */
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
