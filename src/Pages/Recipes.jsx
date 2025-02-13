@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeModal from "../Components/RecipeModal";
 import "./Recipes.css";
 
@@ -6,7 +6,8 @@ import "./Recipes.css";
 import foodImg1 from "../assets/images/food2.jpg";
 import foodImg2 from "../assets/images/food3.jpg";
 
-const recipesData = [
+// Default recipes used if none are found in localStorage
+const defaultRecipes = [
   {
     id: 1,
     title: "Spaghetti Bolognese",
@@ -56,8 +57,17 @@ const recipesData = [
 ];
 
 function Recipes() {
+  const [recipes, setRecipes] = useState(() => {
+    const stored = localStorage.getItem("recipes");
+    return stored ? JSON.parse(stored) : defaultRecipes;
+  });
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [filterDifficulty, setFilterDifficulty] = useState("All");
+
+  // Save recipes to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+  }, [recipes]);
 
   const openModal = (recipe) => {
     setSelectedRecipe(recipe);
@@ -67,8 +77,17 @@ function Recipes() {
     setSelectedRecipe(null);
   };
 
+  // Update a recipe and persist changes
+  const updateRecipe = (updatedRecipe) => {
+    const updatedRecipes = recipes.map((r) =>
+      r.id === updatedRecipe.id ? updatedRecipe : r
+    );
+    setRecipes(updatedRecipes);
+    setSelectedRecipe(updatedRecipe);
+  };
+
   // Filter recipes based on selected difficulty
-  const filteredRecipes = recipesData.filter((recipe) => {
+  const filteredRecipes = recipes.filter((recipe) => {
     if (filterDifficulty === "All") return true;
     return recipe.difficulty.toLowerCase() === filterDifficulty.toLowerCase();
   });
@@ -106,7 +125,11 @@ function Recipes() {
       </section>
 
       {selectedRecipe && (
-        <RecipeModal recipe={selectedRecipe} onClose={closeModal} />
+        <RecipeModal
+          recipe={selectedRecipe}
+          onClose={closeModal}
+          onUpdate={updateRecipe}
+        />
       )}
     </main>
   );
