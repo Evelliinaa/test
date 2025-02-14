@@ -11,7 +11,7 @@ function Home() {
         <h1>Welcome to DishDelights!</h1>
         <h3> Taste the Flavor, One Recipe at a Time </h3>
         <p>
-         Love to explore different cuisines? Learn to love Italian charm. All it takes is egg, flour and some water. Some pasta water will take you to flavor town.
+         Love to explore different cuisines? Learn to love Italian charm. All it takes is egg, flour and some water. Some pasta water will take you to flavor town!
         </p>
         <p> <strong>Discover. Cook. Enjoy.</strong> </p>
       </div>
