@@ -1,4 +1,4 @@
-/* Main container for Favorites page */
+
 .favorites-container {
     max-width: 800px;
     margin: 0 auto;
@@ -20,7 +20,7 @@
     margin-bottom: 2rem;
   }
   
-  /* Form Styling */
+ 
   .recipe-form {
     background: #ffffff;
     padding: 1.5rem;
@@ -79,7 +79,7 @@
     background-color: #e04a4f;
   }
   
-  /* Recipe List & Cards */
+
   .recipe-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -142,10 +142,10 @@
     background: #666;
   }
   
-  /* Responsive Adjustments */
+  
   @media (min-width: 600px) {
     .recipe-list {
-      grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+      grid-template-columns: 1fr 1fr; 
     }
   }
   

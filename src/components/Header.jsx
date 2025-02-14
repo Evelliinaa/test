@@ -9,12 +9,12 @@ function Header() {
     <header className="header">
       <div className="logo">DishDelights</div>
 
-      {/* Hamburger Menu Button */}
+  
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
 
-      {/* Navigation Links */}
+     
       <nav className={menuOpen ? "nav open" : "nav"}>
         <ul>
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>

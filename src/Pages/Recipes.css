@@ -1,4 +1,4 @@
-/* Main container styled similarly to Home.jsx */
+
 .recipes-container {
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     background-color: #f9f9f9;
   }
   
-  /* Search & Filters Section */
+
   .search-filters {
     display: flex;
     flex-wrap: wrap;
@@ -40,14 +40,14 @@
     background-color: #e04a4f;
   }
   
-  /* Recipe Cards Grid */
+ 
   .recipes-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
   
-  /* Individual Recipe Card */
+
   .recipe-card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -66,8 +66,8 @@
   
   .recipe-card img {
     width: 100%;
-    height: 200px;     /* Force a consistent height */
-    object-fit: cover; /* Crops edges to fill the box */
+    height: 200px;     
+    object-fit: cover; 
     border-radius: 5px;
   }
   
@@ -78,7 +78,7 @@
     text-align: center;
   }
   
-  /* Responsive Media Queries */
+
   @media (max-width: 1024px) {
     .recipes-container {
       padding: 2rem;

@@ -2,32 +2,30 @@ import React, { useState, useEffect } from "react";
 import "./Favorites.css";
 
 function Favorites() {
-  // State for the list of user-created recipes
+
   const [recipes, setRecipes] = useState([]);
 
-  // State for form inputs
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [prepTime, setPrepTime] = useState("");
   const [cookTime, setCookTime] = useState("");
-  const [editId, setEditId] = useState(null); // Track which recipe is being edited
+  const [editId, setEditId] = useState(null); 
 
-  // Load from localStorage on component mount
   useEffect(() => {
     const storedRecipes = JSON.parse(localStorage.getItem("myRecipes")) || [];
     setRecipes(storedRecipes);
   }, []);
 
-  // Save to localStorage whenever `recipes` changes
+  
   useEffect(() => {
     localStorage.setItem("myRecipes", JSON.stringify(recipes));
   }, [recipes]);
 
-  // Handle form submission for adding or updating a recipe
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // If we are editing an existing recipe
+   
     if (editId !== null) {
       const updatedRecipes = recipes.map((recipe) =>
         recipe.id === editId
@@ -41,9 +39,9 @@ function Favorites() {
           : recipe
       );
       setRecipes(updatedRecipes);
-      setEditId(null); // Clear edit mode
+      setEditId(null); 
     } else {
-      // Otherwise, add a new recipe
+    
       const newRecipe = {
         id: Date.now(),
         title,
@@ -54,14 +52,14 @@ function Favorites() {
       setRecipes([...recipes, newRecipe]);
     }
 
-    // Reset form fields
+  
     setTitle("");
     setDescription("");
     setPrepTime("");
     setCookTime("");
   };
 
-  // Populate form with existing recipe data for editing
+ 
   const handleEdit = (id) => {
     const recipeToEdit = recipes.find((r) => r.id === id);
     if (recipeToEdit) {
@@ -73,7 +71,7 @@ function Favorites() {
     }
   };
 
-  // Delete a recipe
+
   const handleDelete = (id) => {
     const updatedRecipes = recipes.filter((r) => r.id !== id);
     setRecipes(updatedRecipes);
@@ -86,7 +84,7 @@ function Favorites() {
         Have a secret family recipe or a new culinary experiment with some delicious pasta? 
         Add it below and keep track of all your tasty creations!
       </p>
-      {/* Recipe Form */}
+      
       <form onSubmit={handleSubmit} className="recipe-form">
         <h2>{editId ? "Edit Recipe" : "Add a New Recipe"}</h2>
 
@@ -142,7 +140,7 @@ function Favorites() {
         </button>
       </form>
 
-      {/* Display List of Recipes */}
+      
       <div className="recipe-list">
         {recipes.length === 0 ? (
           <p className="no-recipes-message">No recipes yet. Let's get cooking!</p>
@@ -152,7 +150,7 @@ function Favorites() {
               <h3>{recipe.title}</h3>
               <p className="description">{recipe.description}</p>
 
-              {/* Only show these if provided */}
+              
               {recipe.prepTime && (
                 <p className="time-info">
                   <strong>Prep:</strong> {recipe.prepTime}

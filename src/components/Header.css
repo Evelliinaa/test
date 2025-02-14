@@ -1,4 +1,4 @@
-/* 📌 Header */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,13 +8,13 @@
     background-color: white;
   }
   
-  /* 📌 Logo */
+ 
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
   }
   
-  /* 📌 Default Nav for Larger Screens */
+ 
   .nav ul {
     list-style: none;
     display: flex;
@@ -29,7 +29,7 @@
     font-weight: 500;
   }
   
-  /* 📌 Hamburger Menu Button */
+
   .menu-toggle {
     display: none;
     background: none;
@@ -38,7 +38,7 @@
     cursor: pointer;
   }
   
-  /* 📌 Responsive Navigation for Small Screens */
+
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;

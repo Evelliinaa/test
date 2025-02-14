@@ -1,6 +1,6 @@
-// src/pages/Home.jsx
+
 import React from "react";
-import mainImg from "../assets/images/mainImg.jpg"; // Import the image
+import mainImg from "../assets/images/mainImg.jpg"; 
 import "./Home.css";
 
 function Home() {
@@ -9,11 +9,9 @@ function Home() {
       {/* Left column (text) */}
       <div className="content">
         <h1>Welcome to DishDelights!</h1>
-        <h3> Savor the Flavor, One Recipe at a Time </h3>
+        <h3> Taste the Flavor, One Recipe at a Time </h3>
         <p>
-          Looking for mouthwatering recipes that inspire your inner chef? 
-          You've come to the right place! Explore a world of delicious dishes, 
-          save your favorites, and cook with confidence.
+         Love to explore different cuisines? Learn to love Italian charm. All it takes is egg, flour and some water. Some pasta water will take you to flavor town.
         </p>
         <p> <strong>Discover. Cook. Enjoy.</strong> </p>
       </div>

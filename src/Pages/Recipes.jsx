@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import RecipeModal from "../Components/RecipeModal";
 import "./Recipes.css";
 
-// Import images
 import foodImg1 from "../assets/images/food2.jpg";
 import foodImg2 from "../assets/images/food3.jpg";
 
-// Default recipes used if none are found in localStorage
 const defaultRecipes = [
   {
     id: 1,
@@ -64,7 +62,7 @@ function Recipes() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [filterDifficulty, setFilterDifficulty] = useState("All");
 
-  // Save recipes to localStorage whenever they change
+ 
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipes));
   }, [recipes]);
@@ -77,7 +75,7 @@ function Recipes() {
     setSelectedRecipe(null);
   };
 
-  // Update a recipe and persist changes
+ 
   const updateRecipe = (updatedRecipe) => {
     const updatedRecipes = recipes.map((r) =>
       r.id === updatedRecipe.id ? updatedRecipe : r
@@ -86,7 +84,7 @@ function Recipes() {
     setSelectedRecipe(updatedRecipe);
   };
 
-  // Filter recipes based on selected difficulty
+
   const filteredRecipes = recipes.filter((recipe) => {
     if (filterDifficulty === "All") return true;
     return recipe.difficulty.toLowerCase() === filterDifficulty.toLowerCase();

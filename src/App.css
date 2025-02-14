@@ -1,24 +1,21 @@
-/* App.css */
 
-/* Reset or normalize styles as you see fit */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global body styling */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #fff;
   color: #333;
 }
 
-/* A container that holds the entire page (for a flexible layout) */
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ensures footer is at bottom if content is short */
+  min-height: 100vh; 
 }
 
 /* ---------- HEADER ---------- */
@@ -26,7 +23,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #ccc;  /* matches the screenshot’s border around header */
+  border: 2px solid #ccc;  
   padding: 1rem 2rem;
   background-color: #fff;
 }
@@ -51,29 +48,27 @@ nav a {
 
 /* ---------- MAIN CONTENT ---------- */
 main {
-  flex: 1;            /* fill remaining vertical space */
+  flex: 1;            
   display: flex;
   padding: 2rem;
   gap: 2rem;
   background-color: #f9f9f9;
 }
 
-/* Left column (text) */
+
 .content {
   flex: 2;
 }
 
-/* Right column (image) */
 .image-container {
   flex: 1;
-  background-color: #eee;  /* placeholder background */
+  background-color: #eee;  
   border: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Make the image responsive if desired */
 .image-container img {
   max-width: 100%;
   height: auto;

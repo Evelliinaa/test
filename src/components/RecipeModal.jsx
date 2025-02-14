@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./RecipeModal.css";
 
 function RecipeModal({ recipe, onClose, onUpdate }) {
-  // Disable scrolling when modal is open
+ 
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -13,7 +13,7 @@ function RecipeModal({ recipe, onClose, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedRecipe, setEditedRecipe] = useState(recipe);
 
-  // Update local state when the recipe prop changes (e.g. after an update)
+
   useEffect(() => {
     setEditedRecipe(recipe);
   }, [recipe]);
@@ -30,7 +30,7 @@ function RecipeModal({ recipe, onClose, onUpdate }) {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {/* Close Button */}
+      
         <button className="close-button" onClick={onClose}>
           ✖
         </button>
